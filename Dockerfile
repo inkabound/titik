@@ -11,6 +11,8 @@ RUN useradd -ms /bin/bash user && \
 
 WORKDIR /home/user
 
-COPY . .
+COPY script.sh .
 
-CMD ["/bin/bash"]
+RUN chmod +x script.sh
+
+CMD ["/bin/bash", "./script.sh"]
